@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang=”en”>
+<head>
+<title></title>
+<style>
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+body{
+  font-family: 'Open Sans', sans-serif;
+}
+
+.search {
+  width: 50%;
+  left: 25%;
+  right: 25%;
+  position: relative;
+  display: flex;
+}
+
+.searchTerm {
+  width: 100%;
+  border: 3px solid #00B4CC;
+  padding: 5px;
+  height: 20px;
+  border-radius: 5px 5px 5px 5px;
+  outline: none;
+  color: #9DBFAF;
+  margin-bottom: 8px;
+}
+
+
+
+/*Resize the wrap to see the search bar change!*/
+.wrap{
+  text-align: center;
+  width: 100%;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+</style>
+<script>
+/*
+   const queryString = window.location.search;
+   const urlParams = new URLSearchParams(queryString);
+   const product = urlParams.get('search')
+   console.log(product);
+
+   searchbox=document.getElementById("searchbox");
+   search_length=product.length;
+   console.log(product.length);
+   function sleep(delay) {
+      var start = new Date().getTime();
+      while (new Date().getTime() < start + delay);
+   }
+   function update_search_box(){
+      console.log("Test");
+      search_updates="";
+      for (let i=0; i<search_length; i++){
+         search_updates=search_updates+search[i]
+         searchbox.innerHTML=search_updates;
+         sleep(1);
+      }
+   }
+*/
+</script>
+</head>
+  
+<body onload="demo()">
+
+
+<div class="wrap">
+   <img width="50%" class="center" src="dKWaLYg.png">
+   <div class="search">
+      <input type="text" id="searchbox" class="searchTerm" placeholder="What are you looking for?" autofocus/>
+   </div>
+   <button type="button" id="search_button" onclick="demo()">Search</button>
+   <button type="button" onclick="alert('Hello world!')">Automate stuff</button>
+
+
+<script>
+   const queryString = window.location.search;
+   const urlParams = new URLSearchParams(queryString);
+   const product = urlParams.get('search')
+   console.log(product);
+
+   searchbox=document.getElementById("searchbox");
+   search_length=product.length;
+   console.log(product.length);
+   search_updates=[];
+   /*
+   function update_search_box(){
+      console.log("Test");
+      search_updates="";
+      for (let i=0; i<search_length; i++){
+         search_updates=search_updates+product[i]
+         searchbox.value=search_updates;
+      }
+   }
+   */
+   function sleep(ms) {
+      return new Promise(resolve => setTimeout(resolve, ms));
+   }
+
+   async function demo() {
+      document.getElementById("search_button").onclick=function () {location.href="https://www.google.com/search?q="+product;};
+      for (let i = 0; i < search_length; i++) {
+          document.getElementById("searchbox").focus();
+          console.log(`Waiting ${i} seconds...`);
+          search_updates=search_updates+product[i];
+          searchbox.value=search_updates;
+          await sleep(150);
+      }
+      console.log('Done');
+   }
+
+</script>
+
+</div>
+
+  
+
+  
+</body>
+</html>
