@@ -40,9 +40,17 @@ body{
   transform: translate(-50%, -50%);
 }
 
+#footer
+{
+    position:fixed;
+    bottom:0px;
+    left:0px;
+    right:0px;
+    height:50px;
+    margin-bottom:-25%;
+}
 
 </style>
-
 </head>
   
 <body onload="demo()">
@@ -56,6 +64,9 @@ body{
    <button type="button" id="search_button" onclick="demo()">Search</button>
    <button type="button" onclick="alert('Hello world!')">Automate stuff</button>
 
+<div id="footer">
+   <p style="font-size: small; color: grey;">© Copyright 2024. - This site is not associated with Google in any way. GOOGLE is a trademark of Google Inc. <a href="">Automate stuff</a></p>
+</div>
 
 <script>
    const queryString = window.location.search;
@@ -67,7 +78,6 @@ body{
    search_length=product.length;
    console.log(product.length);
    search_updates=[];
-
    function sleep(ms) {
       return new Promise(resolve => setTimeout(resolve, ms));
    }
