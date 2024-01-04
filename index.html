@@ -42,31 +42,7 @@ body{
 
 
 </style>
-<script>
-/*
-   const queryString = window.location.search;
-   const urlParams = new URLSearchParams(queryString);
-   const product = urlParams.get('search')
-   console.log(product);
 
-   searchbox=document.getElementById("searchbox");
-   search_length=product.length;
-   console.log(product.length);
-   function sleep(delay) {
-      var start = new Date().getTime();
-      while (new Date().getTime() < start + delay);
-   }
-   function update_search_box(){
-      console.log("Test");
-      search_updates="";
-      for (let i=0; i<search_length; i++){
-         search_updates=search_updates+search[i]
-         searchbox.innerHTML=search_updates;
-         sleep(1);
-      }
-   }
-*/
-</script>
 </head>
   
 <body onload="demo()">
@@ -91,16 +67,7 @@ body{
    search_length=product.length;
    console.log(product.length);
    search_updates=[];
-   /*
-   function update_search_box(){
-      console.log("Test");
-      search_updates="";
-      for (let i=0; i<search_length; i++){
-         search_updates=search_updates+product[i]
-         searchbox.value=search_updates;
-      }
-   }
-   */
+
    function sleep(ms) {
       return new Promise(resolve => setTimeout(resolve, ms));
    }
@@ -112,7 +79,7 @@ body{
           console.log(`Waiting ${i} seconds...`);
           search_updates=search_updates+product[i];
           searchbox.value=search_updates;
-          await sleep(150);
+          await sleep(500);
       }
       console.log('Done');
    }
