@@ -1,6 +1,4 @@
 # lmgtfy
 lmgtfy html page
 
-Visit: 
-
-Image from: https://github.com/Arinerron/re-lmgtfy
+Visit: https://automated-apps.github.io/lmgtfy?search=hello
